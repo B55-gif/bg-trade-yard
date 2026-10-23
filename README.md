@@ -32,3 +32,7 @@ This is a frontend demo, not a production marketplace:
 6. Wait for GitHub Pages to publish and use the URL shown in Settings → Pages.
 
 GitHub Pages hosts static files only. It cannot safely process private trade requests or keep API keys secret. Do not put secrets in these files.
+
+
+## Country rate table
+The country rate table uses illustrative demo rates only. Update `countryRateConfig` and `brandDemoRates` in `script.js` with verified, approved rates before using them commercially. These are not live market quotes or guaranteed payouts.

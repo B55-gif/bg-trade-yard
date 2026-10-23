@@ -19,6 +19,7 @@
     <nav class="nav-links" id="navLinks">
       <a href="#marketplace">Marketplace</a>
       <a href="#how-it-works">How it works</a>
+      <a href="#rates">Card rates</a>
       <a href="#estimator">Estimator</a>
       <a class="nav-cta" href="#trade-form">Start a trade</a>
     </nav>
@@ -69,6 +70,14 @@
       </div>
       <div class="product-grid" id="productGrid" aria-live="polite"></div>
       <p class="empty-state hidden" id="emptyState">No sample cards match your search. Try another term.</p>
+    </section>
+
+
+    <section class="section rates-section" id="rates">
+      <div class="section-heading"><div><p class="eyebrow">TRANSPARENT PRICING</p><h2>Gift card rates by country</h2><p class="muted">Choose a country to view supported currency and example payout rates by card brand.</p></div></div>
+      <div class="rates-panel"><div class="rates-toolbar"><label for="rateCountry">Select country<select id="rateCountry"><option value="NG">🇳🇬 Nigeria (NGN)</option><option value="US">🇺🇸 United States (USD)</option><option value="GB">🇬🇧 United Kingdom (GBP)</option><option value="DE">🇩🇪 Germany (EUR)</option><option value="CA">🇨🇦 Canada (CAD)</option><option value="AU">🇦🇺 Australia (AUD)</option><option value="GH">🇬🇭 Ghana (GHS)</option><option value="ZA">🇿🇦 South Africa (ZAR)</option></select></label><p class="rates-currency">Displayed currency: <strong id="rateCurrencyLabel">NGN — Nigerian naira</strong></p></div>
+      <div class="rates-table-wrap"><table class="rates-table"><thead><tr><th>Gift card brand</th><th>Example rate</th><th>Example payout for 100 units</th></tr></thead><tbody id="ratesTableBody"></tbody></table></div>
+      <p class="rates-note"><strong>Important:</strong> These are demonstration rates, not live offers. Real rates depend on card brand, region, denomination, card type, demand, verification, and fees. Confirm the exact quote before trading. Country selection does not convert a card's original balance into another currency.</p></div>
     </section>
 
     <section class="how-section" id="how-it-works">

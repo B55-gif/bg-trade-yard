@@ -81,6 +81,14 @@ dialog.addEventListener("click", event => {
   if (event.target === dialog) dialog.close();
 });
 
+
+// Illustrative country/brand rates for demonstration only; not live market quotes.
+const countryRateConfig={NG:{currency:"NGN",currencyName:"Nigerian naira",factor:1},US:{currency:"USD",currencyName:"US dollar",factor:1},GB:{currency:"GBP",currencyName:"British pound",factor:.98},DE:{currency:"EUR",currencyName:"Euro",factor:.97},CA:{currency:"CAD",currencyName:"Canadian dollar",factor:.96},AU:{currency:"AUD",currencyName:"Australian dollar",factor:.95},GH:{currency:"GHS",currencyName:"Ghanaian cedi",factor:.93},ZA:{currency:"ZAR",currencyName:"South African rand",factor:.94}};
+const brandDemoRates=[{brand:"Amazon",rate:75},{brand:"Apple",rate:72},{brand:"Google Play",rate:68},{brand:"Steam",rate:70},{brand:"PlayStation",rate:69},{brand:"Xbox",rate:68},{brand:"Spotify",rate:60},{brand:"Nike",rate:62}];
+const rateCountry=document.getElementById("rateCountry"),ratesTableBody=document.getElementById("ratesTableBody"),rateCurrencyLabel=document.getElementById("rateCurrencyLabel");
+function renderCountryRates(){if(!rateCountry||!ratesTableBody||!rateCurrencyLabel)return;const country=countryRateConfig[rateCountry.value]||countryRateConfig.NG;rateCurrencyLabel.textContent=`${country.currency} — ${country.currencyName}`;ratesTableBody.innerHTML=brandDemoRates.map(item=>{const rate=Math.round(item.rate*country.factor);const payout=new Intl.NumberFormat("en",{style:"currency",currency:country.currency,maximumFractionDigits:2}).format(rate);return `<tr><td>${escapeHTML(item.brand)}</td><td>${rate}%</td><td>${escapeHTML(payout)}</td></tr>`}).join("")}
+rateCountry?.addEventListener("change",renderCountryRates);
+
 const amountInput = document.getElementById("cardAmount");
 const rateRange = document.getElementById("rateRange");
 const rateLabel = document.getElementById("rateLabel");
@@ -125,4 +133,5 @@ navLinks.querySelectorAll("a").forEach(link => link.addEventListener("click", ()
 }));
 document.getElementById("year").textContent = new Date().getFullYear();
 renderProducts();
+renderCountryRates();
 updateEstimate();
