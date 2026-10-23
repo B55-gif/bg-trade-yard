@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101b2a">
+  <meta name="description" content="BG TRADE YARD gift card marketplace demo. Browse sample listings and estimate gift card values.">
+  <title>BG TRADE YARD | Gift Card Marketplace</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="BG Trade Yard home">
+      <span class="brand-mark" aria-hidden="true">BG</span>
+      <span><strong>BG TRADE YARD</strong><small>GIFT CARD MARKETPLACE</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#marketplace">Marketplace</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#estimator">Estimator</a>
+      <a class="nav-cta" href="#trade-form">Start a trade</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot"></span> BUY • SELL • TRADE</p>
+        <h1>Your gift card.<br><span>A new opportunity.</span></h1>
+        <p class="hero-description">Explore gift card listings and request a trade through a simple, transparent process.</p>
+        <div class="hero-actions">
+          <a class="button button-gold" href="#marketplace">Explore cards <span aria-hidden="true">→</span></a>
+          <a class="button button-outline" href="#trade-form">Sell a gift card</a>
+        </div>
+        <div class="trust-line"><span>✓</span> Clear estimates <span>✓</span> Helpful support <span>✓</span> Safety first</div>
+      </div>
+      <div class="hero-art" aria-label="Decorative gift card illustration">
+        <div class="glow"></div>
+        <div class="floating-card card-back"><span>BG</span><i>GIFT CARD</i></div>
+        <div class="floating-card card-front">
+          <div class="card-top"><span class="mini-mark">BG</span><span class="card-chip">TRADE YARD</span></div>
+          <div class="card-value">GIFT<br>CARDS</div>
+          <div class="card-bottom"><span>BUY • SELL • TRADE</span><span class="card-symbol">✦</span></div>
+        </div>
+        <div class="art-caption">A smarter place to start your trade.</div>
+      </div>
+    </section>
+
+    <section class="notice" aria-label="Prototype notice">
+      <strong>Demo marketplace</strong>
+      <span>Listings and rates are examples only. No gift cards are sold and no trade requests are transmitted in this prototype.</span>
+    </section>
+
+    <section class="section" id="marketplace">
+      <div class="section-heading">
+        <div><p class="eyebrow">THE MARKETPLACE</p><h2>Find your gift card</h2><p class="muted">Browse sample listings or search for a brand.</p></div>
+        <a class="text-link" href="#trade-form">Have a card to sell? <span>→</span></a>
+      </div>
+      <div class="market-controls">
+        <label class="search-box"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="Search gift cards..." aria-label="Search gift cards"></label>
+        <div class="filter-group" role="group" aria-label="Filter gift cards">
+          <button class="filter-button active" data-filter="all">All cards</button>
+          <button class="filter-button" data-filter="gaming">Gaming</button>
+          <button class="filter-button" data-filter="shopping">Shopping</button>
+          <button class="filter-button" data-filter="entertainment">Entertainment</button>
+        </div>
+      </div>
+      <div class="product-grid" id="productGrid" aria-live="polite"></div>
+      <p class="empty-state hidden" id="emptyState">No sample cards match your search. Try another term.</p>
+    </section>
+
+    <section class="how-section" id="how-it-works">
+      <div class="section-heading centered"><div><p class="eyebrow">SIMPLE BY DESIGN</p><h2>How it works</h2><p class="muted">A clear process from inquiry to verified trade.</p></div></div>
+      <div class="steps-grid">
+        <article class="step-card"><span class="step-number">01</span><div class="step-icon">⌕</div><h3>Explore</h3><p>Browse listings or tell us which unused gift card you want to sell.</p></article>
+        <article class="step-card"><span class="step-number">02</span><div class="step-icon">↗</div><h3>Request a quote</h3><p>Share the brand, balance, currency, and contact details. Never share a claim code in a public form.</p></article>
+        <article class="step-card"><span class="step-number">03</span><div class="step-icon">✓</div><h3>Verify the details</h3><p>Confirm the rate, fees, card eligibility, and payment method before any transfer.</p></article>
+      </div>
+    </section>
+
+    <section class="estimator-section" id="estimator">
+      <div class="estimator-copy"><p class="eyebrow">PLAN YOUR TRADE</p><h2>Estimate your card value</h2><p>Try an example payout calculation. Actual offers can differ by brand, region, card status, demand, and fees.</p><div class="estimate-disclaimer">ⓘ The demo rate is illustrative, not a live market quote or guaranteed payout.</div></div>
+      <div class="calculator">
+        <label for="cardAmount">Gift card face value</label>
+        <div class="amount-input"><span>$</span><input id="cardAmount" type="number" min="1" max="10000" step="1" value="100" inputmode="decimal"></div>
+        <label for="rateRange">Example payout rate <strong id="rateLabel">70%</strong></label>
+        <input id="rateRange" type="range" min="10" max="95" value="70">
+        <div class="range-labels"><span>10%</span><span>95%</span></div>
+        <div class="estimate-result"><span>Estimated payout</span><strong id="estimatedValue">$70.00</strong></div>
+        <p class="small-muted">Example only. This calculator does not create an offer.</p>
+      </div>
+    </section>
+
+    <section class="section trade-section" id="trade-form">
+      <div class="section-heading"><div><p class="eyebrow">TAKE THE NEXT STEP</p><h2>Start a trade inquiry</h2><p class="muted">Choose whether you want to buy or sell. This demo will validate your form locally only.</p></div></div>
+      <form id="tradeForm" class="trade-form">
+        <div class="form-grid">
+          <div class="form-field"><label for="tradeType">I want to</label><select id="tradeType" name="tradeType" required><option value="sell">Sell a gift card</option><option value="buy">Buy a listed gift card</option></select></div>
+          <div class="form-field"><label for="brandSelect">Gift card brand</label><select id="brandSelect" name="brand" required><option value="">Choose a brand</option><option>Amazon</option><option>Apple</option><option>Google Play</option><option>Steam</option><option>PlayStation</option><option>Xbox</option><option>Other</option></select></div>
+          <div class="form-field"><label for="faceValue">Face value</label><input id="faceValue" name="faceValue" type="number" min="1" max="10000" step="0.01" placeholder="e.g. 100" required></div>
+          <div class="form-field"><label for="currency">Card currency</label><select id="currency" name="currency" required><option value="USD">USD — US dollar</option><option value="EUR">EUR — Euro</option><option value="GBP">GBP — British pound</option><option value="NGN">NGN — Nigerian naira</option></select></div>
+          <div class="form-field"><label for="contactName">Your name</label><input id="contactName" name="contactName" autocomplete="name" maxlength="80" placeholder="Your name" required></div>
+          <div class="form-field"><label for="contactEmail">Email address</label><input id="contactEmail" name="contactEmail" type="email" autocomplete="email" maxlength="254" placeholder="you@example.com" required></div>
+        </div>
+        <label class="safety-check"><input type="checkbox" id="safetyCheck" required><span>I understand this is a demo form and I must not enter gift card codes, PINs, passwords, or banking credentials.</span></label>
+        <button class="button button-gold submit-button" type="submit">Review inquiry <span aria-hidden="true">→</span></button>
+        <div class="form-message hidden" id="formMessage" role="status"></div>
+      </form>
+    </section>
+
+    <section class="final-cta"><div><p class="eyebrow">BG TRADE YARD</p><h2>Trade with clarity.</h2><p>Good service starts with clear information and careful verification.</p></div><a class="button button-dark" href="#trade-form">Start an inquiry <span aria-hidden="true">→</span></a></section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="#"><span class="brand-mark">BG</span><span><strong>BG TRADE YARD</strong><small>GIFT CARD MARKETPLACE</small></span></a>
+    <p>© <span id="year"></span> BG TRADE YARD. Prototype for demonstration.</p>
+    <div class="footer-links"><a href="#how-it-works">How it works</a><a href="#trade-form">Contact inquiry</a></div>
+    <p class="footer-disclaimer">Do not submit card redemption codes or PINs. Verify card ownership, regional restrictions, applicable laws, and transaction terms before launching a real service.</p>
+  </footer>
+
+  <dialog id="productDialog" class="product-dialog">
+    <button class="dialog-close" id="dialogClose" aria-label="Close details">×</button>
+    <div id="dialogContent"></div>
+  </dialog>
+</body>
+</html>
