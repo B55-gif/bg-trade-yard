@@ -36,3 +36,7 @@ GitHub Pages hosts static files only. It cannot safely process private trade req
 
 ## Country rate table
 The country rate table uses illustrative demo rates only. Update `countryRateConfig` and `brandDemoRates` in `script.js` with verified, approved rates before using them commercially. These are not live market quotes or guaranteed payouts.
+
+
+## Per-card country and currency display
+Each sample card lists example issuing regions and local currencies. This list is illustrative and must be verified against the exact product/issuer terms for each card before live trading. Gift cards can be region-locked; the list does not guarantee redemption or acceptance in every listed country.

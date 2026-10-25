@@ -1,13 +1,19 @@
 const products = [
-  {id:"amazon",name:"Amazon",category:"Shopping",filter:"shopping",value:"$100",price:"Quote on request",label:"POPULAR",logo:"amazon",mark:"amazon",colors:["#f3a847","#d88122"],description:"A sample shopping gift card listing. Brand and regional restrictions must be verified before any trade."},
-  {id:"apple",name:"Apple",category:"Shopping",filter:"shopping",value:"$50",price:"Quote on request",label:"FEATURED",logo:"Apple",mark:"Apple",colors:["#5f6875","#313844"],description:"A sample Apple gift card listing. Eligibility and region can affect acceptance."},
-  {id:"steam",name:"Steam",category:"Gaming",filter:"gaming",value:"$100",price:"Quote on request",label:"GAMING",logo:"STEAM",mark:"Steam",colors:["#315477","#172b40"],description:"A sample gaming gift card listing. Confirm currency, region, and balance before any transaction."},
-  {id:"playstation",name:"PlayStation",category:"Gaming",filter:"gaming",value:"$50",price:"Quote on request",label:"GAMING",logo:"PS",mark:"PlayStation",colors:["#315bd4","#16378f"],description:"A sample PlayStation gift card listing. Regional restrictions may apply."},
-  {id:"googleplay",name:"Google Play",category:"Entertainment",filter:"entertainment",value:"$25",price:"Quote on request",label:"DIGITAL",logo:"Google Play",mark:"Google Play",colors:["#4d9b73","#277052"],description:"A sample Google Play gift card listing. Check the issuing region and current terms."},
-  {id:"xbox",name:"Xbox",category:"Gaming",filter:"gaming",value:"$50",price:"Quote on request",label:"GAMING",logo:"XBOX",mark:"Xbox",colors:["#48a56a","#1b6b43"],description:"A sample Xbox gift card listing. Confirm product type and regional eligibility."},
-  {id:"spotify",name:"Spotify",category:"Entertainment",filter:"entertainment",value:"$30",price:"Quote on request",label:"DIGITAL",logo:"Spotify",mark:"Spotify",colors:["#4dbb8b","#147c56"],description:"A sample entertainment gift card listing. Availability can vary by country."},
-  {id:"nike",name:"Nike",category:"Shopping",filter:"shopping",value:"$75",price:"Quote on request",label:"SHOPPING",logo:"NIKE",mark:"Nike",colors:["#6d7077","#30343a"],description:"A sample retail gift card listing. Check the card's eligible region and terms."}
+  {id:"amazon",name:"Amazon",category:"Shopping",filter:"shopping",value:"$100",price:"Quote on request",label:"POPULAR",logo:"amazon",mark:"amazon",colors:["#f3a847","#d88122"],countries:["US", "GB", "DE", "FR", "CA", "AU", "JP", "IN"],description:"A sample shopping gift card listing. Brand and regional restrictions must be verified before any trade."},
+  {id:"apple",name:"Apple",category:"Shopping",filter:"shopping",value:"$50",price:"Quote on request",label:"FEATURED",logo:"Apple",mark:"Apple",colors:["#5f6875","#313844"],countries:["US", "GB", "DE", "FR", "CA", "AU", "IE", "JP"],description:"A sample Apple gift card listing. Eligibility and region can affect acceptance."},
+  {id:"steam",name:"Steam",category:"Gaming",filter:"gaming",value:"$100",price:"Quote on request",label:"GAMING",logo:"STEAM",mark:"Steam",colors:["#315477","#172b40"],countries:["US", "GB", "DE", "FR", "CA", "AU", "JP", "BR"],description:"A sample gaming gift card listing. Confirm currency, region, and balance before any transaction."},
+  {id:"playstation",name:"PlayStation",category:"Gaming",filter:"gaming",value:"$50",price:"Quote on request",label:"GAMING",logo:"PS",mark:"PlayStation",colors:["#315bd4","#16378f"],countries:["US", "GB", "DE", "FR", "CA", "AU", "JP", "IN"],description:"A sample PlayStation gift card listing. Regional restrictions may apply."},
+  {id:"googleplay",name:"Google Play",category:"Entertainment",filter:"entertainment",value:"$25",price:"Quote on request",label:"DIGITAL",logo:"Google Play",mark:"Google Play",colors:["#4d9b73","#277052"],countries:["US", "GB", "DE", "FR", "CA", "AU", "IN", "BR"],description:"A sample Google Play gift card listing. Check the issuing region and current terms."},
+  {id:"xbox",name:"Xbox",category:"Gaming",filter:"gaming",value:"$50",price:"Quote on request",label:"GAMING",logo:"XBOX",mark:"Xbox",colors:["#48a56a","#1b6b43"],countries:["US", "GB", "DE", "FR", "CA", "AU", "JP", "BR"],description:"A sample Xbox gift card listing. Confirm product type and regional eligibility."},
+  {id:"spotify",name:"Spotify",category:"Entertainment",filter:"entertainment",value:"$30",price:"Quote on request",label:"DIGITAL",logo:"Spotify",mark:"Spotify",colors:["#4dbb8b","#147c56"],countries:["US", "GB", "DE", "FR", "CA", "AU", "IE", "SE"],description:"A sample entertainment gift card listing. Availability can vary by country."},
+  {id:"nike",name:"Nike",category:"Shopping",filter:"shopping",value:"$75",price:"Quote on request",label:"SHOPPING",logo:"NIKE",mark:"Nike",colors:["#6d7077","#30343a"],countries:["US", "GB", "DE", "FR", "CA", "AU", "NL", "IT"],description:"A sample retail gift card listing. Check the card's eligible region and terms."}
 ];
+
+const regionCountries = {"US": {"name": "United States", "currency": "USD", "symbol": "$", "flag": "🇺🇸"}, "GB": {"name": "United Kingdom", "currency": "GBP", "symbol": "£", "flag": "🇬🇧"}, "DE": {"name": "Germany", "currency": "EUR", "symbol": "€", "flag": "🇩🇪"}, "FR": {"name": "France", "currency": "EUR", "symbol": "€", "flag": "🇫🇷"}, "CA": {"name": "Canada", "currency": "CAD", "symbol": "C$", "flag": "🇨🇦"}, "AU": {"name": "Australia", "currency": "AUD", "symbol": "A$", "flag": "🇦🇺"}, "NG": {"name": "Nigeria", "currency": "NGN", "symbol": "₦", "flag": "🇳🇬"}, "IE": {"name": "Ireland", "currency": "EUR", "symbol": "€", "flag": "🇮🇪"}, "IT": {"name": "Italy", "currency": "EUR", "symbol": "€", "flag": "🇮🇹"}, "ES": {"name": "Spain", "currency": "EUR", "symbol": "€", "flag": "🇪🇸"}, "NL": {"name": "Netherlands", "currency": "EUR", "symbol": "€", "flag": "🇳🇱"}, "JP": {"name": "Japan", "currency": "JPY", "symbol": "¥", "flag": "🇯🇵"}, "IN": {"name": "India", "currency": "INR", "symbol": "₹", "flag": "🇮🇳"}, "BR": {"name": "Brazil", "currency": "BRL", "symbol": "R$", "flag": "🇧🇷"}, "MX": {"name": "Mexico", "currency": "MXN", "symbol": "Mex$", "flag": "🇲🇽"}, "SE": {"name": "Sweden", "currency": "SEK", "symbol": "kr", "flag": "🇸🇪"}, "CH": {"name": "Switzerland", "currency": "CHF", "symbol": "CHF", "flag": "🇨🇭"}, "NZ": {"name": "New Zealand", "currency": "NZD", "symbol": "NZ$", "flag": "🇳🇿"}};
+
+function renderRegionList(codes) {
+  return `<div class="region-list">${codes.map(code => { const c = regionCountries[code]; return `<div class="region-row"><span class="region-flag">${c.flag}</span><span class="region-name">${escapeHTML(c.name)}</span><strong class="region-currency">${escapeHTML(c.currency)} (${escapeHTML(c.symbol)})</strong></div>`; }).join("")}</div>`;
+}
 
 const productGrid = document.getElementById("productGrid");
 const searchInput = document.getElementById("searchInput");
@@ -39,7 +45,8 @@ function renderProducts() {
         <span class="product-category">${escapeHTML(product.category)}</span>
         <h3 class="product-name">${escapeHTML(product.name)}</h3>
         <div class="product-meta"><span>Example value</span><strong class="product-price">${escapeHTML(product.value)}</strong></div>
-        <button class="product-action" type="button" data-product="${escapeHTML(product.id)}">View details →</button>
+        <div class="product-regions"><span class="regions-label">Example regions & currencies</span><div class="region-chips">${product.countries.map(code => {const c=regionCountries[code]; return `<span class="region-chip" title="${escapeHTML(c.name)}">${c.flag} ${escapeHTML(c.currency)}</span>`;}).join("")}</div></div>
+        <button class="product-action" type="button" data-product="${escapeHTML(product.id)}">View countries & details →</button>
       </div>
     </article>`).join("");
   emptyState.classList.toggle("hidden", visible.length !== 0);
@@ -64,6 +71,9 @@ productGrid.addEventListener("click", event => {
     <h2 class="dialog-brand">${escapeHTML(product.name)} Gift Card</h2>
     <p>${escapeHTML(product.description)}</p>
     <p><strong>Illustrative face value:</strong> ${escapeHTML(product.value)}</p>
+    <h3 class="dialog-region-heading">Example countries and local currencies</h3>
+    ${renderRegionList(product.countries)}
+    <p class="dialog-note">These are example issuing regions only, not a guarantee that every card works in every listed country. Gift cards are often region-locked; verify the exact card's issuing country, currency, and issuer terms before accepting it.</p>
     <p class="dialog-note">Pricing is not live. This prototype has no inventory, payment processing, or verified sellers.</p>
     <div class="dialog-warning">Never send a gift card claim code, PIN, password, or banking credentials in a public inquiry.</div>
     <a class="button button-gold dialog-cta" href="#trade-form" id="dialogTradeLink">Make an inquiry →</a>`;
